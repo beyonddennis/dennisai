@@ -1,27 +1,38 @@
+// script.js
 document.addEventListener('DOMContentLoaded', function() {
-    const chatLog = document.getElementById('chat-log');
-    const userInput = document.getElementById('user-input');
-    const sendButton = document.getElementById('send-button');
+ const userInput = document.getElementById('user-input');
+ const sendButton = document.getElementById('send-button');
+ const chatLog = document.getElementById('chat-log');
 
-    sendButton.addEventListener('click', function() {
-        const message = userInput.value;
-        if (message.trim() !== '') {
-            displayMessage('user', message);
-            userInput.value = '';
+ sendButton.addEventListener('click', function() {
+ const messageText = userInput.value;
+ if (messageText.trim() !== '') {
+ // Display user message
+ displayMessage(messageText, 'user');
 
-            // Simulate Gemini AI response
-            setTimeout(function() {
-                displayMessage('gemini', 'This is a placeholder response from Gemini AI.');
-            }, 500);
-        }
-    });
+ // Send message to Gemini and display response
+ getGeminiResponse(messageText);
 
-    function displayMessage(sender, message) {
-        const messageElement = document.createElement('div');
-        messageElement.classList.add('message');
-        messageElement.classList.add(sender);
-        messageElement.textContent = `${sender}: ${message}`;
-        chatLog.appendChild(messageElement);
-        chatLog.scrollTop = chatLog.scrollHeight; // Scroll to bottom
-    }
+ // Clear input field
+ userInput.value = '';
+ }
+ });
+
+ // Function to display message in chat log
+ function displayMessage(message, sender) {
+ const messageElement = document.createElement('div');
+ messageElement.classList.add('message', sender);
+ messageElement.textContent = message;
+ chatLog.appendChild(messageElement);
+ chatLog.scrollTop = chatLog.scrollHeight; // Scroll to bottom
+ }
+
+ // Function to get response from Gemini (replace with actual API call)
+ async function getGeminiResponse(message) {
+ // Simulate Gemini response after a short delay
+ setTimeout(() => {
+ const geminiResponse = `This is a simulated response from Gemini for: ${message}`;
+ displayMessage(geminiResponse, 'gemini');
+ }, 500);
+ }
 });
