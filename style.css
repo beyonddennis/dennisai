@@ -1,8 +1,9 @@
 body {
- font-family: 'Arial', sans-serif;
+ font-family: 'Helvetica Neue', sans-serif;
  margin: 0;
  padding: 0;
- background: linear-gradient(to right, #e6e9ed, #f0f4f8);
+ background: linear-gradient(to right, #2c3e50, #34495e);
+ color: #fff;
  display: flex;
  justify-content: center;
  align-items: center;
@@ -35,15 +36,15 @@ body {
 }
 
 .user {
- background-color: #a2d2ff;
- color: #333;
+ background-color: #4ecdc4;
+ color: #222f3e;
  align-self: flex-end;
  text-align: right;
 }
 
 .gemini {
- background-color: #b0f2b4;
- color: #333;
+ background-color: #f7fff7;
+ color: #222f3e;
  align-self: flex-start;
  text-align: left;
 }
@@ -58,7 +59,7 @@ body {
 #user-input {
  flex: 1;
  padding: 10px;
- border: 1px solid #ccc;
+ border: 2px solid #bdc3c7;
  border-radius: 10px;
  margin-right: 10px;
 }
@@ -66,7 +67,7 @@ body {
 #send-button {
  padding: 10px 15px;
  border: none;
- background-color: #386641;
+ background-color: #e74c3c;
  color: #fff;
  border-radius: 10px;
  cursor: pointer;
@@ -74,6 +75,6 @@ body {
 }
 
 #send-button:hover {
- background-color: #6a994e;
+ background-color: #c0392b;
  transform: scale(1.05);
 }
